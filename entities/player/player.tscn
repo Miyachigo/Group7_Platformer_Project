@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b2jnuqupwl48e"]
+
+[ext_resource type="Script" uid="uid://dkky0ew8e5ae0" path="res://entities/player/player.gd" id="1_abrql"]
+[ext_resource type="Texture2D" uid="uid://b5lr6f5twb3l0" path="res://icon.svg" id="1_symyc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfv1e"]
+size = Vector2(32, 29)
+
+[sub_resource type="Animation" id="Animation_sfv1e"]
+resource_name = "attack"
+
+[sub_resource type="Animation" id="Animation_symyc"]
+resource_name = "fall"
+
+[sub_resource type="Animation" id="Animation_abrql"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_sglur"]
+resource_name = "jump"
+
+[sub_resource type="Animation" id="Animation_bls4j"]
+resource_name = "run"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkugw"]
+_data = {
+&"attack": SubResource("Animation_sfv1e"),
+&"fall": SubResource("Animation_symyc"),
+&"idle": SubResource("Animation_abrql"),
+&"jump": SubResource("Animation_sglur"),
+&"run": SubResource("Animation_bls4j")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=688883069]
+script = ExtResource("1_abrql")
+
+[node name="PlatformDetector" type="RayCast2D" parent="." unique_id=1748026837]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490888869]
+unique_name_in_owner = true
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_sfv1e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1275664901]
+unique_name_in_owner = true
+position = Vector2(1.0000038, 0)
+scale = Vector2(0.21875, 0.1953125)
+texture = ExtResource("1_symyc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1619057517]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_fkugw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1584615126]
+unique_name_in_owner = true
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1372125916]
+unique_name_in_owner = true
