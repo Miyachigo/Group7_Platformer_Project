@@ -10,7 +10,7 @@ size = Vector2(1814, 20)
 [node name="Floor" type="StaticBody2D" parent="." unique_id=853587754]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=200650497]
-position = Vector2(292, 350)
+position = Vector2(299, 282)
 shape = SubResource("RectangleShape2D_x4kjb")
 
 [node name="PanelContainer" type="ColorRect" parent="Floor" unique_id=813297968]
@@ -18,10 +18,10 @@ custom_minimum_size = Vector2(640, 20)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -601.0
-offset_top = 340.0
-offset_right = 1186.0
-offset_bottom = 360.0
+offset_left = -598.0
+offset_top = 271.0
+offset_right = 1189.0
+offset_bottom = 291.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.25375363, 0.534786, 0.86855835, 1)
@@ -29,9 +29,10 @@ color = Color(0.25375363, 0.534786, 0.86855835, 1)
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=997528977]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1108216687]
-position = Vector2(56, 340)
+position = Vector2(29, 269.00003)
 scale = Vector2(3.653409, 3.265625)
 polygon = PackedVector2Array(55, 0, 0, -40, 0, 0)
 
 [node name="Player" parent="." unique_id=688883069 instance=ExtResource("1_isn0r")]
-position = Vector2(317, 179)
+position = Vector2(240, 139)
+jump_velocity = -478.0

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b2jnuqupwl48e"]
 
 [ext_resource type="Script" uid="uid://dkky0ew8e5ae0" path="res://entities/player/player.gd" id="1_abrql"]
-[ext_resource type="Texture2D" uid="uid://b5lr6f5twb3l0" path="res://icon.svg" id="1_symyc"]
+[ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/fox/fox_idle_1.png" id="2_abrql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfv1e"]
-size = Vector2(32, 29)
+size = Vector2(31, 34)
 
 [sub_resource type="Animation" id="Animation_sfv1e"]
 resource_name = "attack"
@@ -14,6 +14,7 @@ resource_name = "fall"
 
 [sub_resource type="Animation" id="Animation_abrql"]
 resource_name = "idle"
+loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_sglur"]
 resource_name = "jump"
@@ -38,14 +39,13 @@ unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490888869]
 unique_name_in_owner = true
-position = Vector2(1, -0.5)
+position = Vector2(1.5, -1)
 shape = SubResource("RectangleShape2D_sfv1e")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1275664901]
 unique_name_in_owner = true
 position = Vector2(1.0000038, 0)
-scale = Vector2(0.21875, 0.1953125)
-texture = ExtResource("1_symyc")
+texture = ExtResource("2_abrql")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1619057517]
 unique_name_in_owner = true
