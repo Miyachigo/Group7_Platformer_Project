@@ -2,57 +2,81 @@
 
 [ext_resource type="Script" uid="uid://dkky0ew8e5ae0" path="res://entities/player/player.gd" id="1_abrql"]
 [ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/fox/fox_idle_1.png" id="2_abrql"]
+[ext_resource type="Script" uid="uid://b3mpws2d3ttk5" path="res://entities/player/state_machine.gd" id="3_fsm"]
+[ext_resource type="Script" uid="uid://br3rpcwrbrj0u" path="res://entities/player/states/idle_state.gd" id="4_idle"]
+[ext_resource type="Script" uid="uid://daur7eh52sdme" path="res://entities/player/states/run_state.gd" id="5_run"]
+[ext_resource type="Script" uid="uid://bcckvg73kmx2h" path="res://entities/player/states/jump_state.gd" id="6_jump"]
+[ext_resource type="Script" uid="uid://b4f1ttm87rpjd" path="res://entities/player/states/fall_state.gd" id="7_fall"]
+[ext_resource type="Script" uid="uid://c5i2f325xrqco" path="res://entities/player/states/attack_state.gd" id="8_attack"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfv1e"]
 size = Vector2(31, 34)
 
-[sub_resource type="Animation" id="Animation_sfv1e"]
+[sub_resource type="Animation" id="Animation_7thud"]
 resource_name = "attack"
 
-[sub_resource type="Animation" id="Animation_symyc"]
+[sub_resource type="Animation" id="Animation_26q78"]
 resource_name = "fall"
 
-[sub_resource type="Animation" id="Animation_abrql"]
+[sub_resource type="Animation" id="Animation_bectd"]
 resource_name = "idle"
-loop_mode = 1
 
-[sub_resource type="Animation" id="Animation_sglur"]
+[sub_resource type="Animation" id="Animation_wvtmh"]
 resource_name = "jump"
 
-[sub_resource type="Animation" id="Animation_bls4j"]
+[sub_resource type="Animation" id="Animation_a1qjk"]
 resource_name = "run"
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkugw"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7thud"]
 _data = {
-&"attack": SubResource("Animation_sfv1e"),
-&"fall": SubResource("Animation_symyc"),
-&"idle": SubResource("Animation_abrql"),
-&"jump": SubResource("Animation_sglur"),
-&"run": SubResource("Animation_bls4j")
+&"attack": SubResource("Animation_7thud"),
+&"fall": SubResource("Animation_26q78"),
+&"idle": SubResource("Animation_bectd"),
+&"jump": SubResource("Animation_wvtmh"),
+&"run": SubResource("Animation_a1qjk")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=688883069]
+[node name="Player" type="CharacterBody2D" unique_id=706728295]
 script = ExtResource("1_abrql")
 
-[node name="PlatformDetector" type="RayCast2D" parent="." unique_id=1748026837]
+[node name="PlatformDetector" type="RayCast2D" parent="." unique_id=475600572]
 unique_name_in_owner = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490888869]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=743335190]
 unique_name_in_owner = true
 position = Vector2(1.5, -1)
 shape = SubResource("RectangleShape2D_sfv1e")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1275664901]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1625239609]
 unique_name_in_owner = true
 position = Vector2(1.0000038, 0)
 texture = ExtResource("2_abrql")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1619057517]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1780720799]
 unique_name_in_owner = true
-libraries/ = SubResource("AnimationLibrary_fkugw")
+libraries/ = SubResource("AnimationLibrary_7thud")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1584615126]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=423972531]
 unique_name_in_owner = true
 
-[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1372125916]
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=475391475]
 unique_name_in_owner = true
+
+[node name="StateMachine" type="Node" parent="." unique_id=295198510 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_fsm")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1864006884]
+script = ExtResource("4_idle")
+
+[node name="Run" type="Node" parent="StateMachine" unique_id=135881471]
+script = ExtResource("5_run")
+
+[node name="Jump" type="Node" parent="StateMachine" unique_id=1349788441]
+script = ExtResource("6_jump")
+
+[node name="Fall" type="Node" parent="StateMachine" unique_id=1783613074]
+script = ExtResource("7_fall")
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1715705569]
+script = ExtResource("8_attack")
