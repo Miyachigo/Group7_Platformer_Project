@@ -2,7 +2,7 @@
 extends PlayerState
 
 func enter(_msg: Dictionary = {}) -> void:
-	player.animation_player.play("idle")
+	player.animated_sprite_2d.play("idle")
 	player.velocity.x = 0
 
 

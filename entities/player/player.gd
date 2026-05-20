@@ -9,11 +9,10 @@ class_name Player
 
 @onready var platform_detector: RayCast2D = %PlatformDetector
 @onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
-@onready var sprite_2d: Sprite2D = %Sprite2D
-@onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var camera_2d: Camera2D = %Camera2D
 @onready var jump_sound: AudioStreamPlayer2D = %JumpSound
 @onready var state_machine: StateMachine = $StateMachine
+@onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
 
 
 var gravity:int = ProjectSettings.get("physics/2d/default_gravity")
@@ -39,7 +38,7 @@ func handle_movement_input()->void:
 	)
 	
 	if not is_zero_approx(velocity.x):
-		sprite_2d.flip_h = velocity.x <0
+		animated_sprite_2d.flip_h = velocity.x <0
 	
 	if Input.is_action_just_released("jump") and velocity.y <= 0.0:
 		velocity.y *= 0.6

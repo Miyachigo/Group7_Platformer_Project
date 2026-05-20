@@ -2,7 +2,7 @@
 extends PlayerState
 
 func enter(_msg: Dictionary = {}) -> void:
-	player.animation_player.play("jump")
+	player.animated_sprite_2d.play("jump")
 	player.jump()
 
 
