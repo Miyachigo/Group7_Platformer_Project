@@ -1,0 +1,121 @@
+[gd_scene format=4 uid="uid://d0a03yq05mqrs"]
+
+[ext_resource type="TileSet" uid="uid://brh0ga2ylr37j" path="res://island/tile_set.tres" id="1_obqup"]
+[ext_resource type="Texture2D" uid="uid://bqp6samu2tnlq" path="res://island/images/fox_hat/fox_idle_1.png" id="2_t6553"]
+[ext_resource type="Texture2D" uid="uid://ch5rrfjd1gy6k" path="res://island/images/fox_hat/fox_idle_2.png" id="3_834x8"]
+[ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://island/background/additional_sky.png" id="4_t6553"]
+[ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://island/background/bg_image.png" id="5_dm8an"]
+[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://island/background/additional_water.png" id="6_alpl4"]
+[ext_resource type="Texture2D" uid="uid://dekyi7oa4n0sg" path="res://island/background/water_reflect_big_01.png" id="7_73h83"]
+[ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://island/background/big_clouds.png" id="7_alpl4"]
+[ext_resource type="Texture2D" uid="uid://ci5tpl05cnmra" path="res://island/background/small_cloud_1.png" id="9_m1d6h"]
+[ext_resource type="Texture2D" uid="uid://1t3pkyls8wyt" path="res://island/background/small_cloud_2.png" id="10_ircnv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dm8an"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t6553")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_834x8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_73h83"]
+script/source = "extends  ParallaxLayer
+func _process(delta: float) ->void:
+		motion_offset.x -=delta*20
+		
+"
+
+[node name="Stage" type="Node2D" unique_id=133629053]
+
+[node name="World" type="TileMapLayer" parent="." unique_id=1477732686]
+tile_map_data = PackedByteArray("AAAQABIAAAAAAAEAAAACABIAAAAAAAEAAAAAABAAAAAAAAAAAAABABAAAAABAAAAAAACABAAAAABAAAAAAAEABAAAAABAAAAAAAGABAAAAABAAAAAAAFABAAAAABAAAAAAAKABAAAAABAAAAAAAJABAAAAABAAAAAAALABAAAAABAAAAAAAMABAAAAABAAAAAAANABAAAAABAAAAAAAOABAAAAABAAAAAAAPABAAAAABAAAAAAAQABAAAAABAAAAAAARABAAAAABAAAAAAASABAAAAABAAAAAAAUABAAAAABAAAAAAATABAAAAABAAAAAAAVABAAAAABAAAAAAAWABAAAAABAAAAAAAXABAAAAABAAAAAAAYAA0AAAABAAAAAAAcABEAAAABAAAAAAAdABAAAAABAAAAAAAbABEAAAABAAAAAAAeABEAAAABAAAAAAAfABEAAAABAAAAAAAhABEAAAABAAAAAAAiABEAAAABAAAAAAAjAA8AAAABAAAAAAAjABAAAAABAAAAAAAkABEAAAAAAAEAAAAAABEAAAAAAAEAAAAAABIAAAAAAAEAAAAAABMAAAAAAAEAAAABABMAAAAAAAEAAAABABIAAAAAAAEAAAABABEAAAAAAAEAAAACABEAAAAAAAEAAAACABMAAAAAAAEAAAADABMAAAAAAAEAAAADABIAAAAAAAEAAAADABEAAAAAAAEAAAAEABEAAAAAAAEAAAAEABIAAAAAAAEAAAAEABMAAAAAAAEAAAAFABMAAAAAAAEAAAAFABIAAAAAAAEAAAAFABEAAAAAAAEAAAAGABIAAAAAAAEAAAAGABMAAAAAAAEAAAAGABEAAAAAAAEAAAAKABEAAAAAAAEAAAAJABIAAAAAAAEAAAAJABMAAAAAAAEAAAAJABEAAAAAAAEAAAAKABIAAAAAAAEAAAAKABMAAAAAAAEAAAALABMAAAAAAAEAAAALABIAAAAAAAEAAAALABEAAAAAAAEAAAAMABEAAAAAAAEAAAAMABIAAAAAAAEAAAAMABMAAAAAAAEAAAANABEAAAAAAAEAAAAOABEAAAAAAAEAAAAPABEAAAAAAAEAAAAQABEAAAAAAAEAAAARABIAAAAAAAEAAAASABIAAAAAAAEAAAATABIAAAAAAAEAAAAUABIAAAAAAAEAAAAVABIAAAAAAAEAAAAWABIAAAAAAAEAAAAWABEAAAAAAAEAAAAXABEAAAAAAAEAAAAVABEAAAAAAAEAAAAUABEAAAAAAAEAAAATABEAAAAAAAEAAAASABEAAAAAAAEAAAARABEAAAAAAAEAAAANABIAAAAAAAEAAAAOABIAAAAAAAEAAAAPABIAAAAAAAEAAAASABMAAAAAAAEAAAATABMAAAAAAAEAAAAUABMAAAAAAAEAAAAVABMAAAAAAAEAAAAWABMAAAAAAAEAAAAXABIAAAAAAAEAAAAXABMAAAAAAAEAAAAOABMAAAAAAAEAAAANABMAAAAAAAEAAAAPABMAAAAAAAEAAAAQABMAAAAAAAEAAAARABMAAAAAAAEAAAAbABIAAAAAAAEAAAAbABMAAAAAAAEAAAAcABMAAAAAAAEAAAAcABIAAAAAAAEAAAAdABIAAAAAAAEAAAAdABEAAAAAAAEAAAAdABMAAAAAAAEAAAAeABMAAAAAAAEAAAAeABIAAAAAAAEAAAAfABIAAAAAAAEAAAAfABMAAAAAAAEAAAAhABIAAAAAAAEAAAAiABIAAAAAAAEAAAAiABMAAAAAAAEAAAAjABMAAAAAAAEAAAAjABIAAAAAAAEAAAAjABEAAAAAAAEAAAAkABIAAAAAAAEAAAAkABMAAAAAAAEAAAAhABMAAAAAAAEAAAADABAAAAAAAAEAAAADAA8AAAAEAAAAAAAEAA0AAAAEAAAAAAAGAA0AAAAJAAMAAAAHAA0AAAABAAEAAAAIAA0AAAAJAAMAAAAHAAwAAAAEAAAAAAAaAA0AAAAKAAMAAAAZAA0AAAAKAAMAAAAbAA4AAAANAAMAAAAaAA4AAAAMAAMAAAAYAA4AAAACAAEAAAAZAA4AAAACAAEAAAAlAA4AAAAEAAQAAAAMAA8AAQAAAAAAAQAZAAwAAQAAAAAAAQAiABAAAAABAAAAAAAUAA8AAQAAAAAAAQAbAA0AAQAAAAAAAQA=")
+tile_set = ExtResource("1_obqup")
+
+[node name="Player" type="Node2D" parent="." unique_id=838101047]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=911100040]
+position = Vector2(39, 492)
+scale = Vector2(1, 1.515625)
+sprite_frames = SubResource("SpriteFrames_dm8an")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.35801905
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=13108650]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1461462221]
+motion_scale = Vector2(0.01, 0.8)
+motion_mirroring = Vector2(767, 0)
+
+[node name="SkySprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1713083377]
+position = Vector2(417, -11)
+scale = Vector2(26.125, 20.531)
+texture = ExtResource("4_t6553")
+
+[node name="SeaSkySprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=50393881]
+position = Vector2(0, 143)
+scale = Vector2(2, 2)
+texture = ExtResource("5_dm8an")
+centered = false
+
+[node name="WaterSprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=2070907532]
+position = Vector2(384.5, 479.5)
+scale = Vector2(23.969, 9.969)
+texture = ExtResource("6_alpl4")
+
+[node name="SkyWaterSprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1982900290]
+position = Vector2(-1597, 521)
+scale = Vector2(23.969, 11.969)
+texture = ExtResource("7_73h83")
+centered = false
+
+[node name="ParallaxLayerCloud" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1070647837]
+motion_scale = Vector2(0.01, 0.8)
+motion_mirroring = Vector2(510, 0)
+script = SubResource("GDScript_73h83")
+
+[node name="BigClouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerCloud" unique_id=225898634]
+position = Vector2(0, 195)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_alpl4")
+centered = false
+
+[node name="ParallaxLayerCloud2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1844450066]
+motion_scale = Vector2(0.01, 0.8)
+motion_mirroring = Vector2(510, 0)
+script = SubResource("GDScript_73h83")
+
+[node name="BigClouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerCloud2" unique_id=967906071]
+position = Vector2(514, 195.00002)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_alpl4")
+centered = false
+
+[node name="ParallaxLayerCloud3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=148286949]
+motion_scale = Vector2(0.01, 0.8)
+motion_mirroring = Vector2(510, 0)
+script = SubResource("GDScript_73h83")
+
+[node name="SmalClouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerCloud3" unique_id=1408796652]
+position = Vector2(514, 175)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("9_m1d6h")
+centered = false
+
+[node name="ParallaxLayerCloud4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1561615876]
+motion_scale = Vector2(0.01, 0.8)
+motion_mirroring = Vector2(510, 0)
+script = SubResource("GDScript_73h83")
+
+[node name="SmalClouds1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerCloud4" unique_id=480517345]
+position = Vector2(293, 229)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("10_ircnv")
+centered = false
