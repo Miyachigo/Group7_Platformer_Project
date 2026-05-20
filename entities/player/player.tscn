@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://c5i2f325xrqco" path="res://entities/player/states/attack_state.gd" id="8_attack"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfv1e"]
-size = Vector2(31, 34)
+size = Vector2(21, 30)
 
 [sub_resource type="Animation" id="Animation_7thud"]
 resource_name = "attack"
@@ -44,7 +44,7 @@ unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=743335190]
 unique_name_in_owner = true
-position = Vector2(1.5, -1)
+position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_sfv1e")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1625239609]
