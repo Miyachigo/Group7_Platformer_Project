@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bkuij5owk6jxo"]
+
+[ext_resource type="PackedScene" uid="uid://obn4iry1levq" path="res://base_character.tscn" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://6gko14qsmmw4" path="res://assets/foxy/fox_hat/fox_jump_2.png" id="2_b26j0"]
+[ext_resource type="Texture2D" uid="uid://b2iyrbygs0b7c" path="res://assets/foxy/fox_hat/fox_idle_1.png" id="3_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://c8uke6n7xj17g" path="res://assets/foxy/fox_hat/fox_idle_2.png" id="4_nvl01"]
+[ext_resource type="Texture2D" uid="uid://b7ko4rnci3koo" path="res://assets/foxy/fox_hat/fox_jump_1.png" id="5_ivps1"]
+[ext_resource type="Texture2D" uid="uid://cseha0dkj5lfj" path="res://assets/foxy/fox_hat/fox_walk_1.png" id="6_urp6f"]
+[ext_resource type="Texture2D" uid="uid://3g5hdrfwcd2c" path="res://assets/foxy/fox_hat/fox_walk_2.png" id="7_bwjto"]
+[ext_resource type="Texture2D" uid="uid://cg0s41812vukj" path="res://assets/foxy/fox_hat/fox_walk_3.png" id="8_606se"]
+[ext_resource type="Texture2D" uid="uid://8u26ji11yaua" path="res://assets/foxy/fox_hat/fox_walk_4.png" id="9_u1c27"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_op7ga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b26j0")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n7ghd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nvl01")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ivps1")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_urp6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bwjto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_606se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u1c27")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b26j0"]
+
+[node name="Player" unique_id=133128021 instance=ExtResource("1_4flbx")]
+
+[node name="Direction" type="Node2D" parent="." index="0" unique_id=261951431]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction" index="0" unique_id=1255210640]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_op7ga")
+animation = &"run"
+frame_progress = 0.16851145
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1" unique_id=181493726]
+position = Vector2(-1, -15)
+shape = SubResource("CapsuleShape2D_b26j0")
+
+[node name="States" type="Node" parent="." index="2" unique_id=1300670412]
+
+[node name="Idle" type="Node" parent="States" index="0" unique_id=798556193]
+
+[node name="Run" type="Node" parent="States" index="1" unique_id=789027207]
+
+[node name="Jump" type="Node" parent="States" index="2" unique_id=1515223005]
+
+[node name="Fall" type="Node" parent="States" index="3" unique_id=288618081]
