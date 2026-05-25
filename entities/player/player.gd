@@ -18,9 +18,36 @@ class_name Player
 var gravity:int = ProjectSettings.get("physics/2d/default_gravity")
 var _double_jump_charged: bool = false
 
+var spawn_point: Vector2
+var has_key: bool = false
+
+
+func _ready() -> void:
+	# Store the starting position as the respawn point
+	spawn_point = global_position
+
 
 func _physics_process(_delta: float) -> void:
 	floor_stop_on_slope = not platform_detector.is_colliding()
+
+
+
+func respawn() -> void:
+	print("Player died/fell! Respawning...")
+	global_position = spawn_point
+	velocity = Vector2.ZERO # Reset movement
+
+
+func collect_key() -> void:
+	has_key = true
+	print("Key collected! You can now complete the level.")
+
+
+func complete_level() -> void:
+	if has_key:
+		print("WIN! Level Completed.")
+	else:
+		print("The door is locked... You need a key!")
 
 
 func apply_gravity(delta: float)->void:
