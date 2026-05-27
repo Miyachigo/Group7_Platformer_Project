@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ci5tpl05cnmra" path="res://island/background/small_cloud_1.png" id="9_m1d6h"]
 [ext_resource type="Texture2D" uid="uid://1t3pkyls8wyt" path="res://island/background/small_cloud_2.png" id="10_ircnv"]
 [ext_resource type="Script" uid="uid://bkyqgeyitwgr2" path="res://entities/killzone/killzone.gd" id="11_killzone"]
+[ext_resource type="PackedScene" uid="uid://csfccbjv68jt4" path="res://scenes/collectibles/key.tscn" id="11_mlf85"]
 
 [sub_resource type="GDScript" id="GDScript_73h83"]
 script/source = "extends  ParallaxLayer
@@ -109,3 +110,6 @@ script = ExtResource("11_killzone")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=24690808]
 shape = SubResource("WorldBoundaryShape2D_void")
+
+[node name="Key" parent="." unique_id=47130195 instance=ExtResource("11_mlf85")]
+position = Vector2(1394, 310)

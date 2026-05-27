@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://csfccbjv68jt4"]
 
 [ext_resource type="Texture2D" uid="uid://n5qtm0tr61a1" path="res://assets/key/key_1.png" id="1_ibmjq"]
+[ext_resource type="Script" uid="uid://dtw6lpx44qk01" path="res://scenes/collectibles/key.gd" id="1_key_script"]
 [ext_resource type="Texture2D" uid="uid://s83oi1rfhhhc" path="res://assets/key/key_2.png" id="2_y3n1p"]
 [ext_resource type="Texture2D" uid="uid://bhlnv025oby74" path="res://assets/key/key_3.png" id="3_xic4t"]
 [ext_resource type="Texture2D" uid="uid://duhbm42q0ye1y" path="res://assets/key/key_4.png" id="4_16v6b"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ccrx3ggt4lbng" path="res://assets/key/key_6.png" id="6_l04oq"]
 [ext_resource type="Texture2D" uid="uid://dl6wnwg2oev03" path="res://assets/key/key_7.png" id="7_mn3vl"]
 [ext_resource type="Texture2D" uid="uid://ub77pyekwr1g" path="res://assets/key/key_8.png" id="8_wo800"]
+[ext_resource type="PackedScene" uid="uid://clj8v4v6l7h5m" path="res://scenes/ui/interact_prompt.tscn" id="10_xic4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibmjq"]
 size = Vector2(21.771332, 22.464237)
@@ -45,6 +47,7 @@ animations = [{
 }]
 
 [node name="Key" type="Area2D" unique_id=47130195]
+script = ExtResource("1_key_script")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1167925216]
 position = Vector2(-4.3804127e-07, 2.8312206e-07)
@@ -56,3 +59,10 @@ sprite_frames = SubResource("SpriteFrames_xcycm")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.25227633
+
+[node name="InteractPrompt" parent="." unique_id=1980069889 instance=ExtResource("10_xic4t")]
+unique_name_in_owner = true
+offset_left = -71.0
+offset_top = -20.0
+offset_right = 83.0
+offset_bottom = 20.0
