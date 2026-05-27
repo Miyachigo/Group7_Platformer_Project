@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://v2dtejovry7r" path="res://island/terrain/terrain_32x32.png" id="1_nladp"]
 [ext_resource type="PackedScene" uid="uid://dklikfk4k4o47" path="res://island/palm_tree_1.tscn" id="2_3uk3r"]
+[ext_resource type="PackedScene" uid="uid://dri4pqb6xbmqo" path="res://island/palm_tree_2.tscn" id="3_3kxyh"]
+[ext_resource type="PackedScene" uid="uid://dhaoxul0px5um" path="res://island/palm_tree_3.tscn" id="4_j3t60"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3uk3r"]
 texture = ExtResource("1_nladp")
@@ -104,8 +106,16 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_3kxyh"]
 scenes/1/scene = ExtResource("2_3uk3r")
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_j3t60"]
+scenes/1/scene = ExtResource("3_3kxyh")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ep2ep"]
+scenes/1/scene = ExtResource("4_j3t60")
+
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3uk3r")
 sources/1 = SubResource("TileSetScenesCollectionSource_3kxyh")
+sources/2 = SubResource("TileSetScenesCollectionSource_j3t60")
+sources/3 = SubResource("TileSetScenesCollectionSource_ep2ep")

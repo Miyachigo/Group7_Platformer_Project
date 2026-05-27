@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dri4pqb6xbmqo"]
+
+[ext_resource type="Texture2D" uid="uid://d1jboc5q1i0tj" path="res://island/front_palm_trees/front_palm_tree_right.png" id="1_t2gna"]
+[ext_resource type="PackedScene" uid="uid://b7e34gkv2ja1g" path="res://top_palm_tree_1.tscn" id="2_uoqjo"]
+
+[node name="PalmTree2" type="Node2D" unique_id=2003041439]
+
+[node name="FrontPalmTreeRegular" type="Sprite2D" parent="." unique_id=1705695578]
+texture = ExtResource("1_t2gna")
+
+[node name="TopPalmTree1" parent="." unique_id=938996208 instance=ExtResource("2_uoqjo")]
+position = Vector2(-17, -19)
