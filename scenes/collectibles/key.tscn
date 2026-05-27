@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://csfccbjv68jt4"]
+
+[ext_resource type="Texture2D" uid="uid://n5qtm0tr61a1" path="res://assets/key/key_1.png" id="1_ibmjq"]
+[ext_resource type="Texture2D" uid="uid://s83oi1rfhhhc" path="res://assets/key/key_2.png" id="2_y3n1p"]
+[ext_resource type="Texture2D" uid="uid://bhlnv025oby74" path="res://assets/key/key_3.png" id="3_xic4t"]
+[ext_resource type="Texture2D" uid="uid://duhbm42q0ye1y" path="res://assets/key/key_4.png" id="4_16v6b"]
+[ext_resource type="Texture2D" uid="uid://dlu08i42qil61" path="res://assets/key/key_5.png" id="5_nda55"]
+[ext_resource type="Texture2D" uid="uid://ccrx3ggt4lbng" path="res://assets/key/key_6.png" id="6_l04oq"]
+[ext_resource type="Texture2D" uid="uid://dl6wnwg2oev03" path="res://assets/key/key_7.png" id="7_mn3vl"]
+[ext_resource type="Texture2D" uid="uid://ub77pyekwr1g" path="res://assets/key/key_8.png" id="8_wo800"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibmjq"]
+size = Vector2(21.771332, 22.464237)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcycm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ibmjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y3n1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xic4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_16v6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nda55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l04oq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mn3vl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wo800")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Key" type="Area2D" unique_id=47130195]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1167925216]
+position = Vector2(-4.3804127e-07, 2.8312206e-07)
+scale = Vector2(0.9186391, 1.0683647)
+shape = SubResource("RectangleShape2D_ibmjq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1654389585]
+sprite_frames = SubResource("SpriteFrames_xcycm")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.25227633
