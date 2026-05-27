@@ -11,8 +11,18 @@ config_version=5
 [application]
 
 config/name="Group7_Platformer_Project"
+run/main_scene="uid://d0a03yq05mqrs"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://mn108wgv36fe"
+driver/driver="XAudio2"
+
+[autoload]
+
+AudioManager="*uid://cqgl77cag2l56"
 
 [debug]
 

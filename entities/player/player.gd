@@ -25,7 +25,7 @@ var has_key: bool = false
 func _ready() -> void:
 	# Store the starting position as the respawn point
 	spawn_point = global_position
-
+	
 
 func _physics_process(_delta: float) -> void:
 	floor_stop_on_slope = not platform_detector.is_colliding()
@@ -40,6 +40,7 @@ func respawn() -> void:
 
 func collect_key() -> void:
 	has_key = true
+	print("Key collected! You can now complete the level.")
 
 
 func complete_level() -> void:
@@ -70,21 +71,23 @@ func handle_movement_input()->void:
 		velocity.y *= 0.6
 
 
-func jump()->void:
+func jump() -> void:
 	if is_on_floor():
-		jump_sound.pitch_scale = 1.0
+		pass # Không cần chỉnh pitch của loa cũ nữa
 	elif _double_jump_charged:
-		_double_jump_charged= false
-		jump_sound.pitch_scale = 1.5
+		_double_jump_charged = false
 		var move_dir := Input.get_axis("move_left", "move_right")
 		if move_dir != 0:
-			velocity.x = move_dir * maxf(absf(velocity.x) * 1.1, walk_speed * 0.5)
+			velocity.x = move_dir * maxf(absf(velocity.x) * 1.5, walk_speed * 0.8)
 	else:
 		# This shouldn't happen if can_double_jump() is checked
 		return
-	velocity.y= jump_velocity
-	jump_sound.play()
-
-
+		
+	velocity.y = jump_velocity   
+	
+	# Đặt bẫy in nhật ký để xem game có bị lỗi gọi liên tục (Spam) không
+	#print(">> Bắt đầu nhảy và phát âm thanh!")
+	AudioManager.play_sound("player_jump")
+	
 func can_double_jump()->bool:
 	return _double_jump_charged and not is_on_floor()

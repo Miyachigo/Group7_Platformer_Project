@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AudioDatabase" format=3 uid="uid://domfk878swm8j"]
+
+[ext_resource type="Script" path="res://entities/audio/audio_clip.gd" id="1_k0gku"]
+[ext_resource type="Script" path="res://entities/audio/audio_database.gd" id="2_3a7r5"]
+[ext_resource type="Resource" uid="uid://84gr6vbcob5h" path="res://entities/audio/player_jump.tres" id="3_jump"]
+
+[resource]
+script = ExtResource("2_3a7r5")
+clips = Array[ExtResource("1_k0gku")]([ExtResource("3_jump")])

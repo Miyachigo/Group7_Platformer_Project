@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AudioClip" format=3 uid="uid://84gr6vbcob5h"]
+
+[ext_resource type="Script" path="res://entities/audio/audio_clip.gd" id="1_mx45t"]
+[ext_resource type="AudioStream" uid="uid://xmadeot1iebn" path="res://assets/audio/sfx/player/jump.wav" id="2_xb3iq"]
+
+[resource]
+script = ExtResource("1_mx45t")
+clip_id = "player_jump"
+stream = ExtResource("2_xb3iq")
