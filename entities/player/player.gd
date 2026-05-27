@@ -40,7 +40,6 @@ func respawn() -> void:
 
 func collect_key() -> void:
 	has_key = true
-	print("Key collected! You can now complete the level.")
 
 
 func complete_level() -> void:
@@ -79,7 +78,7 @@ func jump()->void:
 		jump_sound.pitch_scale = 1.5
 		var move_dir := Input.get_axis("move_left", "move_right")
 		if move_dir != 0:
-			velocity.x = move_dir * maxf(absf(velocity.x) * 1.5, walk_speed * 0.8)
+			velocity.x = move_dir * maxf(absf(velocity.x) * 1.1, walk_speed * 0.5)
 	else:
 		# This shouldn't happen if can_double_jump() is checked
 		return

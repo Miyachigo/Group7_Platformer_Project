@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://daur7eh52sdme" path="res://entities/player/states/run_state.gd" id="5_run"]
 [ext_resource type="Script" uid="uid://bcckvg73kmx2h" path="res://entities/player/states/jump_state.gd" id="6_jump"]
 [ext_resource type="Script" uid="uid://b4f1ttm87rpjd" path="res://entities/player/states/fall_state.gd" id="7_fall"]
-[ext_resource type="Script" uid="uid://c5i2f325xrqco" path="res://entities/player/states/attack_state.gd" id="8_attack"]
 [ext_resource type="Texture2D" uid="uid://6gko14qsmmw4" path="res://assets/foxy/fox_hat/fox_jump_2.png" id="9_yqrof"]
 [ext_resource type="Texture2D" uid="uid://b2iyrbygs0b7c" path="res://assets/foxy/fox_hat/fox_idle_1.png" id="10_3wlsy"]
 [ext_resource type="Texture2D" uid="uid://c8uke6n7xj17g" path="res://assets/foxy/fox_hat/fox_idle_2.png" id="11_b2kln"]
@@ -99,9 +98,6 @@ script = ExtResource("6_jump")
 
 [node name="Fall" type="Node" parent="StateMachine" unique_id=1783613074]
 script = ExtResource("7_fall")
-
-[node name="Attack" type="Node" parent="StateMachine" unique_id=1715705569]
-script = ExtResource("8_attack")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1487396672]
 unique_name_in_owner = true
