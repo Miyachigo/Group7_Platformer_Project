@@ -13,6 +13,7 @@ class_name Player
 @onready var jump_sound: AudioStreamPlayer2D = %JumpSound
 @onready var state_machine: StateMachine = $StateMachine
 @onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
+@onready var win_ui: CanvasLayer = $WinUI
 
 
 var gravity:int = ProjectSettings.get("physics/2d/default_gravity")
@@ -46,11 +47,22 @@ func collect_key() -> void:
 	AudioManager.play_sound("key_pickup")
 
 func complete_level() -> void:
-	if has_key:
-		print("WIN! Level Completed.")
-	else:
-		print("The door is locked... You need a key!")
-
+	# Không cần if has_key hay if open_door nữa, được gọi là auto Thắng!
+	print("WIN! Level Completed.")
+	
+	# 1. Foxy bốc hơi và đóng băng mọi chuyển động
+	hide()
+	set_physics_process(false)
+	
+	# 2. Tắt nhạc nền ngay lập tức
+	AudioManager.stop_music()
+	
+	# 3. Bật chữ YOU WIN! chà bá giữa màn hình
+	win_ui.show()
+	
+	# 4. Hẹn giờ 3 giây để người chơi tận hưởng cảm giác chiến thắng
+	await get_tree().create_timer(3.0).timeout
+	
 
 func apply_gravity(delta: float)->void:
 	if is_on_floor():

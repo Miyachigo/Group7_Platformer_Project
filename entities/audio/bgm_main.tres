@@ -7,5 +7,5 @@
 script = ExtResource("1_aix8h")
 clip_id = "bgm_main"
 stream = ExtResource("2_8ipos")
-volume_db = -10.0
+volume_db = -15.0
 metadata/_custom_type_script = "uid://chlphbiuq1gay"

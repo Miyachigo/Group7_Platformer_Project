@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b3t3eqx5rdkdw"]
+
+[ext_resource type="Script" uid="uid://60l5ueo26i1n" path="res://entities/door/door.gd" id="1_nkkm8"]
+[ext_resource type="Texture2D" uid="uid://d4b2xj034dcfc" path="res://assets/door/Door 1.png" id="2_gg805"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycvye"]
+size = Vector2(22.75, 43.75)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gg805"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(0.02, 0.02, 0.02, 0.43529412)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_mxd7w"]
+font_size = 8
+
+[node name="Door" type="Area2D" unique_id=1696626421]
+script = ExtResource("1_nkkm8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=625051852]
+position = Vector2(-11, -44)
+scale = Vector2(0.41818178, 0.41818175)
+texture = ExtResource("2_gg805")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=794677021]
+position = Vector2(-0.3749981, -21.9659)
+shape = SubResource("RectangleShape2D_ycvye")
+
+[node name="PromptLabel" type="Label" parent="." unique_id=194318176]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 39.0
+offset_bottom = -16.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_gg805")
+text = "Press F to open"
+label_settings = SubResource("LabelSettings_mxd7w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

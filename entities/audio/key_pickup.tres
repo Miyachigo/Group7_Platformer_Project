@@ -7,5 +7,5 @@
 script = ExtResource("1_hdequ")
 clip_id = "key_pickup"
 stream = ExtResource("2_q8uf1")
-volume_db = 5.0
+volume_db = 10.0
 metadata/_custom_type_script = "uid://chlphbiuq1gay"

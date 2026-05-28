@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioClip" format=3 uid="uid://s3tp6u8ku04q"]
+
+[ext_resource type="Script" uid="uid://chlphbiuq1gay" path="res://entities/audio/audio_clip.gd" id="1_mckxj"]
+[ext_resource type="AudioStream" uid="uid://b1147po4x62cc" path="res://assets/audio/sfx/door/opening-door-450444.mp3" id="2_y2w0i"]
+
+[resource]
+script = ExtResource("1_mckxj")
+clip_id = "door_open"
+stream = ExtResource("2_y2w0i")
+volume_db = 10.0
+metadata/_custom_type_script = "uid://chlphbiuq1gay"

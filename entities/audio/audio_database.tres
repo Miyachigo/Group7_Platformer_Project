@@ -5,7 +5,9 @@
 [ext_resource type="Resource" uid="uid://d0i6028ffnrs6" path="res://entities/audio/bgm_main.tres" id="3_3k5lf"]
 [ext_resource type="Resource" uid="uid://84gr6vbcob5h" path="res://entities/audio/player_jump.tres" id="3_jump"]
 [ext_resource type="Resource" uid="uid://bprgxrvi5uc37" path="res://entities/audio/key_pickup.tres" id="4_uf17v"]
+[ext_resource type="Resource" uid="uid://s3tp6u8ku04q" path="res://entities/audio/door_open.tres" id="5_7gyfw"]
+[ext_resource type="Resource" uid="uid://bega14i4dtoca" path="res://entities/audio/door_locked.tres" id="6_yosak"]
 
 [resource]
 script = ExtResource("2_3a7r5")
-clips = Array[ExtResource("1_k0gku")]([ExtResource("3_jump"), ExtResource("3_3k5lf"), ExtResource("4_uf17v")])
+clips = Array[ExtResource("1_k0gku")]([ExtResource("3_jump"), ExtResource("3_3k5lf"), ExtResource("4_uf17v"), ExtResource("5_7gyfw"), ExtResource("6_yosak")])

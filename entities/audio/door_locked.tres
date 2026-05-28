@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioClip" format=3 uid="uid://bega14i4dtoca"]
+
+[ext_resource type="Script" uid="uid://chlphbiuq1gay" path="res://entities/audio/audio_clip.gd" id="1_wsevc"]
+[ext_resource type="AudioStream" uid="uid://brcqfk5qxhni6" path="res://assets/audio/sfx/door/door_locked.mp3" id="2_nrp2m"]
+
+[resource]
+script = ExtResource("1_wsevc")
+clip_id = "door_locked"
+stream = ExtResource("2_nrp2m")
+volume_db = 10.0
+metadata/_custom_type_script = "uid://chlphbiuq1gay"
