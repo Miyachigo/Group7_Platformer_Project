@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="AudioDatabase" format=3 uid="uid://domfk878swm8j"]
 
-[ext_resource type="Script" path="res://entities/audio/audio_clip.gd" id="1_k0gku"]
-[ext_resource type="Script" path="res://entities/audio/audio_database.gd" id="2_3a7r5"]
+[ext_resource type="Script" uid="uid://chlphbiuq1gay" path="res://entities/audio/audio_clip.gd" id="1_k0gku"]
+[ext_resource type="Script" uid="uid://ovmtn36802i6" path="res://entities/audio/audio_database.gd" id="2_3a7r5"]
+[ext_resource type="Resource" uid="uid://d0i6028ffnrs6" path="res://entities/audio/bgm_main.tres" id="3_3k5lf"]
 [ext_resource type="Resource" uid="uid://84gr6vbcob5h" path="res://entities/audio/player_jump.tres" id="3_jump"]
+[ext_resource type="Resource" uid="uid://bprgxrvi5uc37" path="res://entities/audio/key_pickup.tres" id="4_uf17v"]
 
 [resource]
 script = ExtResource("2_3a7r5")
-clips = Array[ExtResource("1_k0gku")]([ExtResource("3_jump")])
+clips = Array[ExtResource("1_k0gku")]([ExtResource("3_jump"), ExtResource("3_3k5lf"), ExtResource("4_uf17v")])

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioClip" format=3 uid="uid://d0i6028ffnrs6"]
+
+[ext_resource type="Script" uid="uid://chlphbiuq1gay" path="res://entities/audio/audio_clip.gd" id="1_aix8h"]
+[ext_resource type="AudioStream" uid="uid://0cu2yfdmugja" path="res://assets/audio/music/music.ogg" id="2_8ipos"]
+
+[resource]
+script = ExtResource("1_aix8h")
+clip_id = "bgm_main"
+stream = ExtResource("2_8ipos")
+volume_db = -10.0
+metadata/_custom_type_script = "uid://chlphbiuq1gay"

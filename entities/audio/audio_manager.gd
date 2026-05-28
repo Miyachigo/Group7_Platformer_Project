@@ -89,6 +89,8 @@ func play_music(music_id: String, volume_db: float = 0.0, fade_in: float = 0.0) 
 	
 	music_player.stream = audio_clip.stream
 	music_player.volume_db = audio_clip.volume_db + volume_db
+	
+	music_player.bus = "Music"
 	music_player.play()
 	
 	# Fade in if exists

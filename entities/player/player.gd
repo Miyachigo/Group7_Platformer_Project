@@ -23,6 +23,8 @@ var has_key: bool = false
 
 
 func _ready() -> void:
+	# Call audio play func
+	AudioManager.play_music("bgm_main")
 	# Store the starting position as the respawn point
 	spawn_point = global_position
 	
@@ -41,7 +43,7 @@ func respawn() -> void:
 func collect_key() -> void:
 	has_key = true
 	print("Key collected! You can now complete the level.")
-
+	AudioManager.play_sound("key_pickup")
 
 func complete_level() -> void:
 	if has_key:
