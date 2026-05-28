@@ -12,8 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://b7ko4rnci3koo" path="res://assets/foxy/fox_hat/fox_jump_1.png" id="12_we0b7"]
 [ext_resource type="Texture2D" uid="uid://cseha0dkj5lfj" path="res://assets/foxy/fox_hat/fox_walk_1.png" id="13_mtric"]
 [ext_resource type="Texture2D" uid="uid://3g5hdrfwcd2c" path="res://assets/foxy/fox_hat/fox_walk_2.png" id="14_eyb6c"]
+[ext_resource type="FontFile" uid="uid://cxmoox1v88tr0" path="res://assets/font/Minecraftia-Regular.ttf" id="15_3wlsy"]
 [ext_resource type="Texture2D" uid="uid://cg0s41812vukj" path="res://assets/foxy/fox_hat/fox_walk_3.png" id="15_221hk"]
 [ext_resource type="Texture2D" uid="uid://8u26ji11yaua" path="res://assets/foxy/fox_hat/fox_walk_4.png" id="16_ghoj8"]
+[ext_resource type="PackedScene" uid="uid://c8n8j8j8j8j8j" path="res://scenes/ui/level_start_ui.tscn" id="17_start_ui"]
+[ext_resource type="PackedScene" uid="uid://dacx5mxy0ogr" path="res://scenes/ui/menu_ui.tscn" id="18_menu_ui"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfv1e"]
 size = Vector2(22, 30)
@@ -125,7 +128,14 @@ offset_right = 38.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_3wlsy")
 text = "YOU WIN!"
 label_settings = SubResource("LabelSettings_afbqv")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LevelStartUI" parent="." unique_id=1243169779 instance=ExtResource("17_start_ui")]
+unique_name_in_owner = true
+
+[node name="MenuUI" parent="." unique_id=1890067713 instance=ExtResource("18_menu_ui")]
+unique_name_in_owner = true

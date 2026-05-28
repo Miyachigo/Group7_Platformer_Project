@@ -14,6 +14,7 @@ class_name Player
 @onready var state_machine: StateMachine = $StateMachine
 @onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
 @onready var win_ui: CanvasLayer = $WinUI
+@onready var menu_ui: CanvasLayer = %MenuUI
 
 
 var gravity:int = ProjectSettings.get("physics/2d/default_gravity")
@@ -34,11 +35,18 @@ func _physics_process(_delta: float) -> void:
 	floor_stop_on_slope = not platform_detector.is_colliding()
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		menu_ui.toggle_pause()
+
+
 
 func respawn() -> void:
 	print("Player died/fell! Respawning...")
 	global_position = spawn_point
 	velocity = Vector2.ZERO # Reset movement
+	has_key = false
+	get_tree().call_group("keys", "respawn_key")
 
 
 func collect_key() -> void:

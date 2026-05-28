@@ -105,6 +105,13 @@ centered = false
 position = Vector2(110, 332)
 jump_velocity = -400.0
 
+[node name="ColorRect" parent="Player/LevelStartUI" parent_id_path=PackedInt32Array(706728295, 1243169779) index="0" unique_id=1883676207]
+color = Color(0.21960784, 0.16470589, 0.07058824, 1)
+
+[node name="ColorRect" parent="Player/MenuUI" parent_id_path=PackedInt32Array(706728295, 1890067713) index="0" unique_id=350248889]
+visible = true
+color = Color(0.21960784, 0.16470589, 0.07058824, 0.47058824)
+
 [node name="Killzone" type="Area2D" parent="." unique_id=102603411]
 position = Vector2(438, 1000)
 script = ExtResource("11_killzone")
@@ -117,3 +124,7 @@ position = Vector2(1394, 306)
 
 [node name="Door" parent="." unique_id=1696626421 instance=ExtResource("12_e2x8w")]
 position = Vector2(19, 513)
+
+[editable path="Player"]
+[editable path="Player/LevelStartUI"]
+[editable path="Player/MenuUI"]

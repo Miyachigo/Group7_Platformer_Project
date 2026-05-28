@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://60l5ueo26i1n" path="res://entities/door/door.gd" id="1_nkkm8"]
 [ext_resource type="Texture2D" uid="uid://d4b2xj034dcfc" path="res://assets/door/Door 1.png" id="2_gg805"]
+[ext_resource type="FontFile" uid="uid://cxmoox1v88tr0" path="res://assets/font/Minecraftia-Regular.ttf" id="3_mxd7w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycvye"]
 size = Vector2(22.75, 43.75)
@@ -38,6 +39,7 @@ offset_left = -32.0
 offset_top = -32.0
 offset_right = 39.0
 offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("3_mxd7w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gg805")
 text = "Press F to open"
 label_settings = SubResource("LabelSettings_mxd7w")
