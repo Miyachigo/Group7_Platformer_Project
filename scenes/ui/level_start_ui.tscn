@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c8n8j8j8j8j8j"]
+
+[ext_resource type="Script" uid="uid://cp3m4niii48pe" path="res://scenes/ui/level_start_ui.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dw5473lx5w25s" path="res://assets/sprites/frames/art_jitsu_blanko.png" id="2_frame"]
+[ext_resource type="FontFile" uid="uid://cxmoox1v88tr0" path="res://assets/font/Minecraftia-Regular.ttf" id="3_xxhdg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wooden"]
+texture = ExtResource("2_frame")
+region_rect = Rect2(242.3452, 97, 43.7433, 93.60367)
+
+[node name="LevelStartUI" type="CanvasLayer" unique_id=1438723786]
+process_mode = 3
+script = ExtResource("1_script")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1883676207]
+offset_left = 90.0
+offset_top = 21.5
+offset_right = 550.0
+offset_bottom = 338.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21960784, 0.16470589, 0.07058824, 0.47058824)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=331506639]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -146.5
+offset_right = 230.0
+offset_bottom = 146.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wooden")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=911399890]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=223257404]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=173479071]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xxhdg")
+theme_override_font_sizes/font_size = 24
+text = "FOXY'S ADVENTURE"
+horizontal_alignment = 1
+
+[node name="Summary" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=565996555]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xxhdg")
+theme_override_font_sizes/font_size = 12
+text = "Meet Foxy, the most dapper adventurer on the high seas! Clad in his favorite hat, Foxy has found himself stranded on a mysterious tropical island. Legend tells of a hidden golden key that can unlock the ancient portal home. Your mission is to guide Foxy through the terrain, locate the key, and reach the door to escape! Good luck!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1478750538]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_xxhdg")
+text = "START"
