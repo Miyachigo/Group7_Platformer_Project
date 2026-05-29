@@ -60,7 +60,11 @@ func complete_level() -> void:
 	
 	# 1. Foxy bốc hơi và đóng băng mọi chuyển động
 	hide()
+	velocity = Vector2.ZERO
 	set_physics_process(false)
+	state_machine.set_physics_process(false)
+	state_machine.set_process(false)
+	collision_shape_2d.set_deferred("disabled", true)
 	
 	# 2. Tắt nhạc nền ngay lập tức
 	AudioManager.stop_music()
